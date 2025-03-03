@@ -37,3 +37,15 @@ body {
     justify-content: center;
     padding: 10px;
 }
+
+.tempDisplay{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#temp{
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 300%;
+}

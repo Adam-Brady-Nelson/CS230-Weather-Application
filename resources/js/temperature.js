@@ -2,6 +2,11 @@ function getTemperature() {
     console.log("Fetching temperature data");
     try{
         placeName = document.getElementById("city").value;
+        if(placeName == "")
+        {
+            document.getElementById("temp").innerText = "Please enter a city name";
+            return;
+        }
         fetch("resources/data/sample.json")
         .then((response) => response.json())
         .then((data) => {
