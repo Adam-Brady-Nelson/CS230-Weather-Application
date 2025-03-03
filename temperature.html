@@ -17,16 +17,14 @@
     </div>
 
     <div class="inputForm">
-        <form id="tempForm">
-            <label for="city">City:</label>
-            <input type="text" id="city" name="city" required>
-            <button type="submit">Submit</button>
-        </form>
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" required>
+        <button type="submit" onsubmit="getTemperature">Submit</button>
     </div>
 
     <div class="tempDisplay">
-
+        <p id="temp">N/A</p>
     </div>
 
 </body>
-</div></html>
+</html>
