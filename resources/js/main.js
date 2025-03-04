@@ -15,10 +15,8 @@ function getTemperature() {
         .then((response) => response.json())
         .then((data) => {
             placeTemp = searchByName(data, placeName).temperatureCelsius;
-            console.log(placeTemp);
             temperatureAsC = placeTemp;
             temperatureAsF = fahrenheitCalc(temperatureAsC);
-            console.log(temperatureAsC + " " + temperatureAsF);
             document.getElementById("temp").innerText = temperatureAsC + "°C";
             temperatureColorChange(temperatureAsC);
         });
@@ -29,7 +27,6 @@ function getTemperature() {
 
 function temperatureColorChange(temp)
 {
-    console.log(temp);
     if(temp <= 0)
     {
         document.getElementsByClassName("Display")[0].style.backgroundColor = "blue";
