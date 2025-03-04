@@ -18,7 +18,7 @@ This section focuses on creating the basic structure of the web application.
 
 #### Requirements:
 
-- [ ] **Boilerplate (5%)**: Initialize the web application with an organized folder structure containing `index.html`, `styles.css`, and `script.js` and a folder for the following HTMl pages.
+- [x] **Boilerplate (5%)**: Initialize the web application with an organized folder structure containing `index.html`, `styles.css`, and `script.js` and a folder for the following HTMl pages.
 - [ ] **Home Page (5%)**: Develop a Home Page featuring a heading, an input field for the city name, a button to submit the input, and a navbar with four buttons to pages for Temperature, Humidity, UV Ind[...]
 - [ ] **Temperature Section (5%)**: Create a HTML page displaying the temperature with a title, a paragraph (with an id for temperature data), a toggle button for Fahrenheit and Celsius, and space for a t[...]
 - [ ] **Humidity Section (5%)**: Develop a HTML page displaying the humidity with a title, a paragraph (with an id for humidity data), and space for a drop icon.
