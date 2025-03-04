@@ -94,3 +94,24 @@ function getHumidity() {
         console.error(error);
     }
 }
+
+function getWind() {
+    console.log("Fetching wind data");
+    try{
+        placeName = document.getElementById("city").value;
+        if(placeName == "")
+        {
+            document.getElementById("wind").innerText = "Please enter a city name";
+            return;
+        }
+        fetch("resources/data/sample.json")
+        .then((response) => response.json())
+        .then((data) => {
+            placeTemp = searchByName(data, placeName).windSpeed;
+            document.getElementById("wind").innerText = placeTemp + "/h";
+            temperatureColorChange(placeTemp);
+        });
+    } catch (error) {
+        console.error(error);
+    }
+}

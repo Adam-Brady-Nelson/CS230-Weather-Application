@@ -30,7 +30,7 @@ body {
 
 .active{
     background-color: lightgray;
-    color: black;
+    color: black !important;
 }
 
 .title{
@@ -68,6 +68,12 @@ body {
 }
 
 #humidity{
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 300%;
+}
+
+#wind{
     text-align: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 300%;

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather App</title>
+    <link rel="stylesheet" href="resources/css/styles.css">
+    <style>
+        body {
+            background-color: darkgrey;
+        }
+    </style>
+    <script src="resources/js/main.js"></script>
+    <link rel="icon" type="image/x-icon" href="resources/images/logo.png">
+</head>
+<body>
+    <div class="navbar">
+        <a href="home.html">Home</a>
+        <a href="temperature.html">Temperature</a>
+        <a class="active" href="wind.html">Wind</a>
+        <a href="humidity.html">Humidity</a>
+        <a href="UV.html">UV Rating</a>
+    </div>
+    <div class="title">
+        <h1 id="pageTitle">Wind</h1>
+    </div>
+
+    <div class="inputForm">
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" required>
+        <button type="submit" onclick="getWind()">Submit</button>
+    </div>
+
+    <br>
+
+    <div class="Display">
+        <p id="wind">N/A</p>
+    </div>
+</body>
+</html>
