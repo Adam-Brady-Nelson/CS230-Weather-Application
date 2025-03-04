@@ -1,5 +1,5 @@
 function getHumidity() {
-    console.log("Fetching data");
+    console.log("Fetching humidity data");
     try{
         placeName = document.getElementById("city").value;
         if(placeName == "")
