@@ -2,8 +2,8 @@
 <html>
 <head>
     <title>Weather App</title>
-    <link rel="stylesheet" href="resources/css/humidity.css">
-    <script src="resources/js/humidity.js"></script>
+    <link rel="stylesheet" href="resources/css/UV.css">
+    <script src="resources/js/UV.js"></script>
     <link rel="icon" type="image/x-icon" href="resources/images/logo.png">
 </head>
 <body>
@@ -11,22 +11,24 @@
         <a href="home.html">Home</a>
         <a href="temperature.html">Temperature</a>
         <a href="wind.html">Wind</a>
-        <a class="active" href="humidity.html">Humidity</a>
-        <a href="UV.html">UV Rating</a>
+        <a href="humidity.html">Humidity</a>
+        <a  class="active" href="UV.html">UV Rating</a>
     </div>
     <div class="title">
-        <h1 id="pageTitle">Humidity</h1>
+        <h1 id="pageTitle">UV Rating</h1>
     </div>
 
     <div class="inputForm">
         <label for="city">City:</label>
         <input type="text" id="city" name="city" required>
-        <button type="submit" onclick="getHumidity()">Submit</button>
+        <button type="submit" onclick="getUV()">Submit</button>
     </div>
 
-    <div class="humidityDisplay">
+    <br>
+
+    <div class="tempDisplay">
         <br>
-        <p id="humidity">N/A</p>
+        <p id="UV">N/A</p>
     </div>
 
 </body>
