@@ -1,5 +1,6 @@
-var isFahrenheit = false;
-var temperature = 0;
+var isShowingF = false;
+var temperatureAsC = 0;
+var temperatureAsF = 0;
 
 function getTemperature() {
     console.log("Fetching temperature data");
@@ -14,9 +15,12 @@ function getTemperature() {
         .then((response) => response.json())
         .then((data) => {
             placeTemp = searchByName(data, placeName).temperatureCelsius;
-            var temperature = placeTemp;
-            document.getElementById("temp").innerText = placeTemp + "°C";
-            temperatureColorChange(placeTemp);
+            console.log(placeTemp);
+            temperatureAsC = placeTemp;
+            temperatureAsF = fahrenheitCalc(temperatureAsC);
+            console.log(temperatureAsC + " " + temperatureAsF);
+            document.getElementById("temp").innerText = temperatureAsC + "°C";
+            temperatureColorChange(temperatureAsC);
         });
     } catch (error) {
         console.error(error);
@@ -28,15 +32,15 @@ function temperatureColorChange(temp)
     console.log(temp);
     if(temp <= 0)
     {
-        document.getElementsByClassName("tempDisplay")[0].style.backgroundColor = "blue";
+        document.getElementsByClassName("Display")[0].style.backgroundColor = "blue";
     }else if(temp <= 10)
     {
-        document.getElementsByClassName("tempDisplay")[0].style.backgroundColor = "lightblue";
+        document.getElementsByClassName("Display")[0].style.backgroundColor = "lightblue";
     }else if(temp <= 20)
     {
-        document.getElementsByClassName("tempDisplay")[0].style.backgroundColor = "yellow";
+        document.getElementsByClassName("Display")[0].style.backgroundColor = "yellow";
     }else{
-        document.getElementsByClassName("tempDisplay")[0].style.backgroundColor = "red";
+        document.getElementsByClassName("Display")[0].style.backgroundColor = "red";
     }
 
     return;
@@ -120,19 +124,23 @@ function getWind() {
     }
 }
 
-function getAsFahrenheit()
+function fahrenheitCalc(numIn)
 {
     console.log("Switching type");
-    if(!isFahrenheit)
-    {
-        currentTemp = document.getElementById("temp").innerText;
-        console.log(currentTemp.substring(0,currentTemp.length-2));
-        asF = (Number(currentTemp.substring(0,currentTemp.length-2)) * (9/5) + 32);
-        console.log(asF);
-        document.getElementById("temp").innerText = asF + "°F";
+    asF = ((numIn * (9/5)) + 32);
+    return asF;
+}
 
-        isFahrenheit = !isFahrenheit;
+function displayAsOtherType()
+{
+    if(!isShowingF)
+    {
+        document.getElementById("temp").innerText = temperatureAsF + "°F";
+        isShowingF = !isShowingF;
+        document.getElementById("typeChangeButton").innerText = "Get Temperature as Celsius"
     }else{
-        //do opposite and put it back
+        document.getElementById("temp").innerText = temperatureAsC + "°C";
+        isShowingF = !isShowingF;
+        document.getElementById("typeChangeButton").innerText = "Get Temperature as Fahrenheit"
     }
 }
