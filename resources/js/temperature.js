@@ -11,10 +11,7 @@ function getTemperature() {
         .then((response) => response.json())
         .then((data) => {
             placeTemp = searchByName(data, placeName).temperatureCelsius;
-            uvIndex = searchByName(data, placeName).uvIndex;
-
             document.getElementById("temp").innerText = placeTemp + "°C";
-            document.getElementById("UV").innerText = uvIndex;
             colorChange(placeTemp);
         });
     } catch (error) {
