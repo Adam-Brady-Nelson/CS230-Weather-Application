@@ -1,4 +1,5 @@
 var isFahrenheit = false;
+var temperature = 0;
 
 function getTemperature() {
     console.log("Fetching temperature data");
@@ -13,6 +14,7 @@ function getTemperature() {
         .then((response) => response.json())
         .then((data) => {
             placeTemp = searchByName(data, placeName).temperatureCelsius;
+            var temperature = placeTemp;
             document.getElementById("temp").innerText = placeTemp + "°C";
             temperatureColorChange(placeTemp);
         });
@@ -130,6 +132,7 @@ function getAsFahrenheit()
         document.getElementById("temp").innerText = asF + "°F";
 
         isFahrenheit = !isFahrenheit;
-        document
+    }else{
+        //do opposite and put it back
     }
 }
