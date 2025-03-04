@@ -123,13 +123,13 @@ function getWind() {
 
 function fahrenheitCalc(numIn)
 {
-    console.log("Switching type");
     asF = ((numIn * (9/5)) + 32);
     return asF;
 }
 
 function displayAsOtherType()
 {
+    console.log("Switching type");
     if(!isShowingF)
     {
         document.getElementById("temp").innerText = temperatureAsF + "°F";
