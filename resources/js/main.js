@@ -1,3 +1,5 @@
+var isFahrenheit = false;
+
 function getTemperature() {
     console.log("Fetching temperature data");
     try{
@@ -113,5 +115,21 @@ function getWind() {
         });
     } catch (error) {
         console.error(error);
+    }
+}
+
+function getAsFahrenheit()
+{
+    console.log("Switching type");
+    if(!isFahrenheit)
+    {
+        currentTemp = document.getElementById("temp").innerText;
+        console.log(currentTemp.substring(0,currentTemp.length-2));
+        asF = (Number(currentTemp.substring(0,currentTemp.length-2)) * (9/5) + 32);
+        console.log(asF);
+        document.getElementById("temp").innerText = asF + "°F";
+
+        isFahrenheit = !isFahrenheit;
+        document
     }
 }

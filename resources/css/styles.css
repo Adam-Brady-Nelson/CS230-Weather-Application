@@ -55,6 +55,12 @@ body {
     margin-left: auto;
 }
 
+.tempTypeSwitch{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
 #temp{
     text-align: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
