@@ -5,7 +5,7 @@ var temperatureAsF = 0;
 function getTemperature() {
     console.log("Fetching temperature data");
     try{
-        placeName = document.getElementById("city").value;
+        placeName = sessionStorage.getItem("City");
         if(placeName == "")
         {
             document.getElementById("temp").innerText = "Please enter a city name";
@@ -45,6 +45,7 @@ function temperatureColorChange(temp)
 
 function searchByName(dataIn, name)
 {
+    console.log(name + "is this");
     for(i = 0; i < dataIn.length; i++)
     {
         if(dataIn[i].cityName == name)
@@ -61,7 +62,7 @@ function searchByName(dataIn, name)
 function getUV() {
     console.log("Fetching UV data");
     try{
-        placeName = document.getElementById("city").value;
+        placeName = sessionStorage.getItem("City");
         if(placeName == "")
         {
             document.getElementById("UV").innerText = "Please enter a city name";
@@ -82,7 +83,7 @@ function getUV() {
 function getHumidity() {
     console.log("Fetching humidity data");
     try{
-        placeName = document.getElementById("city").value;
+        placeName = sessionStorage.getItem("City");
         if(placeName == "")
         {
             document.getElementById("humidity").innerText = "Please enter a city name";
@@ -103,7 +104,7 @@ function getHumidity() {
 function getWind() {
     console.log("Fetching wind data");
     try{
-        placeName = document.getElementById("city").value;
+        placeName = sessionStorage.getItem("City");
         if(placeName == "")
         {
             document.getElementById("wind").innerText = "Please enter a city name";
@@ -114,7 +115,6 @@ function getWind() {
         .then((data) => {
             placeTemp = searchByName(data, placeName).windSpeed;
             document.getElementById("wind").innerText = placeTemp + "/h";
-            temperatureColorChange(placeTemp);
         });
     } catch (error) {
         console.error(error);
@@ -142,13 +142,13 @@ function displayAsOtherType()
     }
 }
 
-function setCityNameSessionStorage(dataIn)
+function setCityNameSessionStorage()
 {
-    // Save data to sessionStorage
-    sessionStorage.setItem("City", dataIn);
+    sessionStorage.setItem("City", document.getElementById("city").value);
 }
 
 function getCityNameSessionStorage()
 {
-    sessionStorage.getItem("City");
+    let returned = sessionStorage.getItem("City");
+    return returned
 }

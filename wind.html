@@ -11,7 +11,7 @@
     <script src="resources/js/main.js"></script>
     <link rel="icon" type="image/x-icon" href="resources/images/logo.png">
 </head>
-<body>
+<body onload="getWind()">
     <div class="navbar">
         <a href="home.html">Home</a>
         <a href="temperature.html">Temperature</a>
@@ -21,12 +21,6 @@
     </div>
     <div class="title">
         <h1 id="pageTitle">Wind</h1>
-    </div>
-
-    <div class="inputForm">
-        <label for="city">City:</label>
-        <input type="text" id="city" name="city" required>
-        <button type="submit" onclick="getWind()">Submit</button>
     </div>
 
     <br>
