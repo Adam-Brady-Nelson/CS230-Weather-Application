@@ -152,3 +152,13 @@ function getCityNameSessionStorage()
     let returned = sessionStorage.getItem("City");
     return returned
 }
+
+let field = document.getElementById("city");
+
+if (sessionStorage.getItem("autosave")) {
+  field.value = sessionStorage.getItem("autosave");
+}
+
+field.addEventListener("change", () => {
+  sessionStorage.setItem("autosave", field.value);
+})
