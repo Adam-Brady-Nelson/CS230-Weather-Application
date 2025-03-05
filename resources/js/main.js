@@ -141,3 +141,14 @@ function displayAsOtherType()
         document.getElementById("typeChangeButton").innerText = "Get Temperature as Fahrenheit"
     }
 }
+
+function setCityNameSessionStorage(dataIn)
+{
+    // Save data to sessionStorage
+    sessionStorage.setItem("City", dataIn);
+}
+
+function getCityNameSessionStorage()
+{
+    sessionStorage.getItem("City");
+}
