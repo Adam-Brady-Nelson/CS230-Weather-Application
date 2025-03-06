@@ -41,7 +41,17 @@ body {
 .inputForm{
     display: flex;
     justify-content: center;
+    padding-top: 100px;
+}
+
+.submitButton{
+    display: flex;
+    justify-content: center;
     padding: 10px;
+}
+
+#button{
+    font-size: 20px;
 }
 
 .Display{
@@ -83,4 +93,26 @@ body {
     text-align: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 300%;
+}
+
+.pageImage{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+#thermoImage{
+    height:200px;
+}
+
+#windImage{
+    height:200px;
+}
+
+#humidImage{
+    height:200px;
+}
+
+#uvImage{
+    height:200px;
 }

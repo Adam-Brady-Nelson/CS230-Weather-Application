@@ -12,6 +12,11 @@
     <link rel="icon" type="image/x-icon" href="resources/images/logo.png">
 </head>
 <body>
+
+    <div class="title">
+        <h1 id="pageTitle">Weather App</h1>
+    </div>
+    
     <div class="navbar">
         <a class="active" href="home.html">Home</a>
         <a href="temperature.html">Temperature</a>
@@ -24,7 +29,10 @@
     <div class="inputForm">
         <label for="city">City:</label>
         <input type="text" id="city" name="city" required>
-        <button type="submit" onclick="setCityNameSessionStorage()">Submit</button>
+    </div>
+
+    <div class="submitButton">
+        <button id="button" type="submit" onclick="setCityNameSessionStorage()">Submit</button>
     </div>
 </body>
 </div></html>
