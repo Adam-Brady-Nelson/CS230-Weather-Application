@@ -6,7 +6,8 @@ function getTemperature() {
     console.log("Fetching temperature data");
     try{
         placeName = sessionStorage.getItem("City");
-        if(placeName == "")
+        console.log(placeName);
+        if(placeName == "" || placeName == null)
         {
             document.getElementById("temp").innerText = "Please enter a city name";
             return;
@@ -97,7 +98,7 @@ function getUV() {
     console.log("Fetching UV data");
     try{
         placeName = sessionStorage.getItem("City");
-        if(placeName == "")
+        if(placeName == ""|| placeName == null)
         {
             document.getElementById("UV").innerText = "Please enter a city name";
             return;
@@ -118,7 +119,7 @@ function getHumidity() {
     console.log("Fetching humidity data");
     try{
         placeName = sessionStorage.getItem("City");
-        if(placeName == "")
+        if(placeName == ""|| placeName == null)
         {
             document.getElementById("humidity").innerText = "Please enter a city name";
             return;
@@ -140,7 +141,7 @@ function getWind() {
     console.log("Fetching wind data");
     try{
         placeName = sessionStorage.getItem("City");
-        if(placeName == "")
+        if(placeName == ""|| placeName == null)
         {
             document.getElementById("wind").innerText = "Please enter a city name";
             return;
