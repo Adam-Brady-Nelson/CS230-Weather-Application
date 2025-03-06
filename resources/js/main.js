@@ -80,7 +80,6 @@ function humidityColorChange(humidity)
 
 function searchByName(dataIn, name)
 {
-    console.log(name + "is this");
     for(i = 0; i < dataIn.length; i++)
     {
         if(dataIn[i].cityName == name)
