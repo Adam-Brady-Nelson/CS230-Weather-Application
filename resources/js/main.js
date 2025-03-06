@@ -16,6 +16,11 @@ function getTemperature() {
         .then((response) => response.json())
         .then((data) => {
             placeTemp = searchByName(data, placeName).temperatureCelsius;
+            if(placeTemp == undefined)
+            {
+                document.getElementById("temp").innerText = "City not found";
+                return;
+            }
             temperatureAsC = placeTemp;
             temperatureAsF = fahrenheitCalc(temperatureAsC);
             document.getElementById("temp").innerText = temperatureAsC + "°C";
@@ -107,6 +112,11 @@ function getUV() {
         .then((response) => response.json())
         .then((data) => {
             uvIndex = searchByName(data, placeName).uvIndex;
+            if(uvIndex == null)
+                {
+                    document.getElementById("UV").innerText = "City not found";
+                    return;
+                }
             document.getElementById("UV").innerText = uvIndex;
             UVcolorChange(uvIndex);
         });
@@ -129,6 +139,11 @@ function getHumidity() {
         .then((data) => {
 
             humidity = searchByName(data, placeName).humidity;
+            if(humidity == null)
+            {
+                document.getElementById("humidity").innerText = "City not found";
+                return;
+            }
             document.getElementById("humidity").innerText = (humidity * 100) + "%";
             humidityColorChange(humidity);
         });
@@ -150,6 +165,11 @@ function getWind() {
         .then((response) => response.json())
         .then((data) => {
             placeTemp = searchByName(data, placeName).windSpeed;
+            if(placeTemp == null)
+            {
+                document.getElementById("wind").innerText = "City not found";
+                return;
+            }
             document.getElementById("wind").innerText = placeTemp + "/h";
             windAndTempcolorChange(placeTemp.substring(0, placeTemp.length - 2));
         });
