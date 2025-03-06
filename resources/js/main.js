@@ -18,14 +18,14 @@ function getTemperature() {
             temperatureAsC = placeTemp;
             temperatureAsF = fahrenheitCalc(temperatureAsC);
             document.getElementById("temp").innerText = temperatureAsC + "°C";
-            temperatureColorChange(temperatureAsC);
+            windAndTempcolorChange(temperatureAsC);
         });
     } catch (error) {
         console.error(error);
     }
 }
 
-function temperatureColorChange(temp)
+function windAndTempcolorChange(temp)
 {
     if(temp <= 0)
     {
@@ -41,6 +41,41 @@ function temperatureColorChange(temp)
     }
 
     return;
+}
+
+function UVcolorChange(uv)
+{
+    if(uv <= 2)
+    {
+        document.getElementsByClassName("Display")[0].style.backgroundColor = "green";
+    }else if(uv <= 5)
+    {
+        document.getElementsByClassName("Display")[0].style.backgroundColor = "yellow";
+    }else if(uv <= 7)
+    {
+        document.getElementsByClassName("Display")[0].style.backgroundColor = "orange";
+    }else if(uv <= 10)
+    {
+        document.getElementsByClassName("Display")[0].style.backgroundColor = "red";
+    }else{
+        document.getElementsByClassName("Display")[0].style.backgroundColor = "purple";
+    }
+}
+
+function humidityColorChange(humidity)
+{
+    if(humidity <= 0.3)
+    {
+        document.getElementsByClassName("Display")[0].style.backgroundColor = "blue";
+    }else if(humidity <= 0.6)
+    {
+        document.getElementsByClassName("Display")[0].style.backgroundColor = "lightblue";
+    }else if(humidity <= 0.9)
+    {
+        document.getElementsByClassName("Display")[0].style.backgroundColor = "yellow";
+    }else{
+        document.getElementsByClassName("Display")[0].style.backgroundColor = "red";
+    }
 }
 
 function searchByName(dataIn, name)
@@ -73,7 +108,7 @@ function getUV() {
         .then((data) => {
             uvIndex = searchByName(data, placeName).uvIndex;
             document.getElementById("UV").innerText = uvIndex;
-            //colorChange(placeTemp);
+            UVcolorChange(uvIndex);
         });
     } catch (error) {
         console.error(error);
@@ -95,6 +130,7 @@ function getHumidity() {
 
             humidity = searchByName(data, placeName).humidity;
             document.getElementById("humidity").innerText = (humidity * 100) + "%";
+            humidityColorChange(humidity);
         });
     } catch (error) {
         console.error(error);
@@ -115,6 +151,7 @@ function getWind() {
         .then((data) => {
             placeTemp = searchByName(data, placeName).windSpeed;
             document.getElementById("wind").innerText = placeTemp + "/h";
+            windAndTempcolorChange(placeTemp.substring(0, placeTemp.length - 2));
         });
     } catch (error) {
         console.error(error);
